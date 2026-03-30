@@ -147,6 +147,7 @@ create_aliases() {
         cat > claude-free.bat << EOF
 @echo off
 echo Starting Claude Code (Free)...
+set CLAUDE_CODE_GIT_BASH_PATH=C:/Users/anshita/AppData/Local/Programs/Git/bin/bash.exe
 set ANTHROPIC_AUTH_TOKEN=freecc
 set ANTHROPIC_BASE_URL=http://localhost:8082
 claude %*
@@ -157,6 +158,7 @@ EOF
         # Linux/macOS alias
         cat > claude-free << EOF
 #!/bin/bash
+export CLAUDE_CODE_GIT_BASH_PATH="C:/Users/anshita/AppData/Local/Programs/Git/bin/bash.exe"
 export ANTHROPIC_AUTH_TOKEN="freecc"
 export ANTHROPIC_BASE_URL="http://localhost:8082"
 claude "\$@"

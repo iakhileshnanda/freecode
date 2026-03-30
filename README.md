@@ -53,6 +53,12 @@ After install, just run:
 claude-free  # No login required!
 ```
 
+## Windows Git Bash Auto-Setup
+**No manual configuration needed!** The installer automatically:
+- Sets `CLAUDE_CODE_GIT_BASH_PATH` to Git's bash.exe
+- Configures `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_BASE_URL`
+- Works with Windows Git Bash out of the box
+
 ## Get NVIDIA API Key
 1. Visit: https://build.nvidia.com/meta/llama-3_1-8b-instruct
 2. Sign up for free account
