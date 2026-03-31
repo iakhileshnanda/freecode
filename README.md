@@ -1,66 +1,60 @@
-# 🚀 Claude Easy Install
+# 🚀 Claude Free Code
 
-**One-command setup for free Claude Code** - No login dashboard, uses your NVIDIA API key!
+**One-command Claude setup** - No login dashboard, uses your NVIDIA API key!
 
-## Quick Start
+## ⚡ Quick Start
 
-### Automatic Install (Recommended)
+### Linux/macOS
 ```bash
-# Clone and run installer
-git clone https://github.com/Alishahryar1/free-claude-code.git claude-easy-install
-cd claude-easy-install
+git clone https://github.com/iakhileshnanda/freecode.git
+cd freecode
 chmod +x install.sh
 ./install.sh
 ```
 
-### Manual Install
-```bash
-# Install Claude Code
-curl -fsSL https://claude.ai/install.sh | bash
+### Windows (PowerShell)
+```powershell
+# Method 1: PowerShell (Recommended)
+git clone https://github.com/iakhileshnanda/freecode.git
+cd freecode
+.\install.ps1
 
-# Set your NVIDIA API key in .env file
-# Get key from: https://build.nvidia.com/meta/llama-3_1-8b-instruct
-
-# Start free proxy
-python3 -m pip install uv
-uv run uvicorn server:app --host 0.0.0.0 --port 8082
-
-# Use Claude (new terminal)
-ANTHROPIC_AUTH_TOKEN="freecc" ANTHROPIC_BASE_URL="http://localhost:8082" claude
+# Method 2: Git Bash
+git clone https://github.com/iakhileshnanda/freecode.git
+cd freecode
+chmod +x install.sh
+./install.sh
 ```
 
-## Features
-- ✅ **No login required** - Bypasses Claude dashboard
-- ✅ **Uses NVIDIA NIM** - High-quality models with your API key
-- ✅ **Cross-platform** - Linux, macOS, Windows
-- ✅ **Auto-detect OS** - Smart installer
-- ✅ **Interactive setup** - Asks for NVIDIA API key
-- ✅ **Updated models** - Qwen and Kimi K1.5 models
+### Windows Issues? Try this:
+```powershell
+# Manual Windows setup
+$env:ANTHROPIC_AUTH_TOKEN="freecc"
+$env:ANTHROPIC_BASE_URL="http://localhost:8082"
+claude
+```
 
-## Models Used
-- **Opus**: Kimi K2 Instruct 0905 (premium reasoning)
-- **Sonnet**: Qwen3 Coder 480B (advanced coding)
+## ✅ What You Get
+- **No login required** - Bypasses Claude dashboard
+- **NVIDIA NIM models** - Premium quality with your API key
+- **Cross-platform** - Linux, macOS, Windows
+- **Auto-detection** - Smart OS detection
+
+## 🎯 Models
+- **Opus**: Kimi K2 (premium reasoning)
+- **Sonnet**: Qwen3 Coder (advanced coding) 
 - **Haiku**: DeepSeek V3.2 (fast & efficient)
 
-## OS Support
-- **Linux/macOS**: Uses bash/zsh
-- **Windows**: Uses PowerShell
-- **Auto-detection**: Runs appropriate commands
-
-## Usage
+## 🔧 Usage
 After install, just run:
 ```bash
 claude-free  # No login required!
 ```
 
-## Windows Git Bash Auto-Setup
-**No manual configuration needed!** The installer automatically:
-- Sets `CLAUDE_CODE_GIT_BASH_PATH` to Git's bash.exe
-- Configures `ANTHROPIC_AUTH_TOKEN` and `ANTHROPIC_BASE_URL`
-- Works with Windows Git Bash out of the box
+## 🆘 Troubleshooting
+**Windows PowerShell not working?**
+1. Run PowerShell as Administrator
+2. Set execution policy: `Set-ExecutionPolicy RemoteSigned`
+3. Try Git Bash instead
 
-## Get NVIDIA API Key
-1. Visit: https://build.nvidia.com/meta/llama-3_1-8b-instruct
-2. Sign up for free account
-3. Copy your API key
-4. Paste during installation or edit .env file later
+**Get NVIDIA API key:** https://build.nvidia.com/explore
