@@ -14,11 +14,11 @@ $Red = "`e[31m"
 $Blue = "`e[34m"
 $Reset = "`e[0m"
 
-function Write-Banner() {
+function Write-Banner {
     Write-Host $Blue
     Write-Host "╔═══════════════════════════════════════╗"
-    Write-Host "║         Claude Easy Install          ║"
-    Write-Host "║      Free Claude Code Setup          ║"
+    Write-Host "║        Claude Easy Install            ║"
+    Write-Host "║      Free Claude Code Setup           ║"
     Write-Host "╚═══════════════════════════════════════╝"
     Write-Host $Reset
 }
@@ -43,7 +43,6 @@ function Test-Dependencies {
 
 function Install-Claude {
     Write-Host "${Yellow}Installing Claude Code...${Reset}"
-    
     try {
         Set-ExecutionPolicy Bypass -Scope Process -Force
         [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
@@ -57,7 +56,6 @@ function Install-Claude {
 
 function Install-UV {
     Write-Host "${Yellow}Installing uv...${Reset}"
-    
     try {
         irm https://astral.sh/uv/install.ps1 | iex
         Write-Host "${Green}uv installed${Reset}"
@@ -103,7 +101,7 @@ ANTHROPIC_BASE_URL="http://localhost:8082"
     Write-Host "${Green}Configuration created at .env${Reset}"
     
     if ($nvidia_key -eq "YOUR_NVIDIA_API_KEY_HERE") {
-        Write-Host "${Yellow}⚠️  Please edit .env file and replace YOUR_NVIDIA_API_KEY_HERE with your actual key${Reset}"
+        Write-Host "${Yellow}⚠️ Please edit .env file and replace YOUR_NVIDIA_API_KEY_HERE with your actual key${Reset}"
     }
 }
 
@@ -112,7 +110,6 @@ function Start-Server {
     
     # Start server in new window
     Start-Process powershell -ArgumentList "-Command", "uv run uvicorn server:app --host 0.0.0.0 --port 8082; Read-Host 'Press Enter to close'"
-    
     Start-Sleep -Seconds 3
     Write-Host "${Green}Server started on port 8082${Reset}"
 }
@@ -133,18 +130,16 @@ pause
     Write-Host "${Green}Created claude-free.bat${Reset}"
 }
 
-function Show-Success() {
+function Show-Success {
     Write-Host $Green
     Write-Host "╔═══════════════════════════════════════╗"
-    Write-Host "║         Installation Complete!        ║"
+    Write-Host "║        Installation Complete!         ║"
     Write-Host "╚═══════════════════════════════════════╝"
     Write-Host $Reset
-    
     Write-Host "Run: .\claude-free.bat"
     Write-Host ""
     Write-Host "That's it! No login required."
     Write-Host "Server running on http://localhost:8082"
-}
 }
 
 # Main execution
