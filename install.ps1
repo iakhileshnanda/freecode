@@ -14,7 +14,7 @@ $Red = "`e[31m"
 $Blue = "`e[34m"
 $Reset = "`e[0m"
 
-function Write-Banner {
+function Write-Banner() {
     Write-Host $Blue
     Write-Host "╔═══════════════════════════════════════╗"
     Write-Host "║         Claude Easy Install          ║"
@@ -133,7 +133,7 @@ pause
     Write-Host "${Green}Created claude-free.bat${Reset}"
 }
 
-function Show-Success {
+function Show-Success() {
     Write-Host $Green
     Write-Host "╔═══════════════════════════════════════╗"
     Write-Host "║         Installation Complete!        ║"
@@ -143,7 +143,8 @@ function Show-Success {
     Write-Host "Run: .\claude-free.bat"
     Write-Host ""
     Write-Host "That's it! No login required."
-    Write-Host "Server running on http://localhost:8082""
+    Write-Host "Server running on http://localhost:8082"
+}
 }
 
 # Main execution
